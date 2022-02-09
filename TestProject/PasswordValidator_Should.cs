@@ -29,5 +29,11 @@ namespace TestProject
             Assert.False(PasswordValidator.Validate("asdfghqw"));
         }
 
+        [Fact]
+        public void validate_at_least_1_lowercase()
+        {
+            Assert.False(PasswordValidator.Validate("ASDFGHQW"));
+        }
+
     }
 }

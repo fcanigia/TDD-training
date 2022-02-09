@@ -6,15 +6,8 @@ namespace TestProject
     {
         public static bool Validate(string passwordToValidate)
         {
-            var len = passwordToValidate.IsLengthRight();
-
-            var hasUppercase = passwordToValidate.HasAtLeastOneUppercase();
-
-            var hasLowercase = passwordToValidate.HasAtLeastOneLowercase();
-
-            var hasNumber = passwordToValidate.Any(char.IsDigit);
-
-            return len && hasUppercase && hasLowercase && hasNumber;
+            return passwordToValidate.IsLengthRight() && passwordToValidate.HasAtLeastOneUppercase() &&
+                passwordToValidate.HasAtLeastOneLowercase() && passwordToValidate.HasAtLeastOneNumber();
         }
 
         public static bool IsLengthRight(this string str)
@@ -35,6 +28,11 @@ namespace TestProject
         public static bool HasAtLeastOneLowercase(this string str)
         {
             return str.Any(char.IsLower);
+        }
+
+        public static bool HasAtLeastOneNumber(this string str)
+        {
+            return str.Any(char.IsDigit);
         }
 
     }

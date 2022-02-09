@@ -1,17 +1,21 @@
 ﻿
 namespace TestProject
 {
-    internal class PasswordValidator
+    internal static class PasswordValidator
     {
         public static bool Validate(string passwordToValidate)
         {
-            if (passwordToValidate.Length < 8)
+            return passwordToValidate.IsLengthRight();
+        }
+
+        public static bool IsLengthRight(this string str)
+        {
+            if (str.Length < 8)
             {
                 return false;
             }
-            
+
             return true;
         }
-
     }
 }

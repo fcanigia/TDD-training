@@ -12,7 +12,9 @@ namespace TestProject
 
             var hasLowercase = passwordToValidate.HasAtLeastOneLowercase();
 
-            return len && hasUppercase && hasLowercase;
+            var hasNumber = passwordToValidate.Any(char.IsDigit);
+
+            return len && hasUppercase && hasLowercase && hasNumber;
         }
 
         public static bool IsLengthRight(this string str)
@@ -34,5 +36,6 @@ namespace TestProject
         {
             return str.Any(char.IsLower);
         }
+
     }
 }

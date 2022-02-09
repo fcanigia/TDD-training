@@ -14,7 +14,7 @@ namespace TestProject
         [Fact]
         public void validate_at_least_8_characters_length()
         {
-            Assert.True(PasswordValidator.Validate("12345678"));
+            Assert.True(PasswordValidator.Validate("Ab123456"));
         }
 
         [Fact]
@@ -38,7 +38,7 @@ namespace TestProject
         [Fact]
         public void validate_at_least_1_number()
         {
-            Assert.True(PasswordValidator.Validate("12345678"));
+            Assert.True(PasswordValidator.Validate("1Ab2cd3ef"));
         }
 
     }

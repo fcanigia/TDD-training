@@ -10,7 +10,7 @@ namespace TestProject
 
             var hasUppercase = passwordToValidate.HasAtLeastOneUppercase();
 
-            var hasLowercase = passwordToValidate.Any(char.IsLower);
+            var hasLowercase = passwordToValidate.HasAtLeastOneLowercase();
 
             return len && hasUppercase && hasLowercase;
         }
@@ -28,6 +28,11 @@ namespace TestProject
         public static bool HasAtLeastOneUppercase(this string str)
         {
             return str.Any(char.IsUpper);
+        }
+
+        public static bool HasAtLeastOneLowercase(this string str)
+        {
+            return str.Any(char.IsLower);
         }
     }
 }

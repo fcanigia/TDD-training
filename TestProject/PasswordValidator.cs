@@ -10,7 +10,9 @@ namespace TestProject
 
             var hasUppercase = passwordToValidate.HasAtLeastOneUppercase();
 
-            return len && hasUppercase;
+            var hasLowercase = passwordToValidate.Any(char.IsLower);
+
+            return len && hasUppercase && hasLowercase;
         }
 
         public static bool IsLengthRight(this string str)

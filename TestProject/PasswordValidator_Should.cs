@@ -35,5 +35,11 @@ namespace TestProject
             Assert.False(PasswordValidator.Validate("ASDFGHQW"));
         }
 
+        [Fact]
+        public void validate_at_least_1_number()
+        {
+            Assert.True(PasswordValidator.Validate("12345678"));
+        }
+
     }
 }

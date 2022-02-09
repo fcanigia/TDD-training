@@ -5,7 +5,12 @@ namespace TestProject
     {
         public static bool Validate(string passwordToValidate)
         {
-            return false;
+            if (passwordToValidate.Length < 8)
+            {
+                return false;
+            }
+            
+            return true;
         }
 
     }

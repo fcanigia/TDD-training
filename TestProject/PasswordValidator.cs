@@ -1,11 +1,16 @@
-﻿
+﻿using System.Linq;
+
 namespace TestProject
 {
     internal static class PasswordValidator
     {
         public static bool Validate(string passwordToValidate)
         {
-            return passwordToValidate.IsLengthRight();
+            var len = passwordToValidate.IsLengthRight();
+
+            var hasUppercase = passwordToValidate.Any(char.IsUpper);
+
+            return len && hasUppercase;
         }
 
         public static bool IsLengthRight(this string str)

@@ -8,7 +8,7 @@ namespace TestProject
         {
             var len = passwordToValidate.IsLengthRight();
 
-            var hasUppercase = passwordToValidate.Any(char.IsUpper);
+            var hasUppercase = passwordToValidate.HasAtLeastOneUppercase();
 
             return len && hasUppercase;
         }
@@ -21,6 +21,11 @@ namespace TestProject
             }
 
             return true;
+        }
+
+        public static bool HasAtLeastOneUppercase(this string str)
+        {
+            return str.Any(char.IsUpper);
         }
     }
 }
